@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <%- include('../partials/navigation') %>
+    <div class="container">
+        <div class="flex-container">
+            <div class="shader-container">
+                <h1><%= post.title %></h1>
+                <div class="blog-content">
+                    <% if (Array.isArray(post.content)) { %>
+                        <% post.content.forEach(paragraph => { %>
+                            <p class="blog-p"><%= paragraph %></p>
+                        <% }); %>
+                    <% } else { %>
+                        <p class="blog-p"><%= post.content %></p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

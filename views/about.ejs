@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/navigation') %>
+    <div class="container">
+        <div class="flex-container">
+            <div class="shader-container">
+                <h1><%= title %></h1>
+                <p><%= info.description %></p>
+                <h2>Meet Our Team</h2>
+                <ul>
+                    <% info.team.forEach(member => { %>
+                        <li>
+                            <p><strong><%= member.name %></strong> - <%= member.role %></p>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>
